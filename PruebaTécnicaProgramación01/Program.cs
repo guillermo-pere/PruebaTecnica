@@ -26,8 +26,7 @@ namespace PruebaTénica01
             {
                 Console.WriteLine("Gestión de cuentas Bancarias \nIntroduzca su accion \n1-Crear cuenta \n2-Consultar Saldo \n3-Realizar un deposito \n4-Realizar un retiro\n5-Consultar Saldo Final \n6-Salir");
                 Entry = Console.ReadLine();
-                valid = Regex.IsMatch(Entry, "([0-9]+)");
-                if (valid == true)
+                if (int.TryParse(Entry, out int value))
                 {
                     MainOptions = Convert.ToInt32(Entry);
                     switch (MainOptions)
@@ -307,8 +306,7 @@ namespace PruebaTénica01
             bool valid;
             int numero;
             Entry = Console.ReadLine();
-            valid = Regex.IsMatch(Entry, "([0-9]+)");
-            if (valid)
+            if (int.TryParse(Entry, out int value))
             {
                 numero = Convert.ToInt32(Entry);
             }
